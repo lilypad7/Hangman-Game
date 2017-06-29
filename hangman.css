@@ -1,0 +1,67 @@
+#logo {
+  color: white;
+  font-size: 70px;
+  text-align:center;
+  background-color: #ffdab9;
+  padding: 2%;
+}
+
+#instructions {
+  text-align: center;
+  color: #ffdab9;
+  font-size: 25px;
+}
+
+#start {
+  margin-left: 44%;
+  margin-right: auto;
+  padding: 10px;
+  margin-bottom: 3%;
+  background-color: #ffdab9;
+  color:white;
+  font-size: 26px;
+} 
+
+#resetBtn {
+  margin-left: 44%;
+  margin-right: auto;
+  padding: 10px;
+  margin-bottom: 3%;
+  background-color: #ffdab9;
+  color:white;
+  font-size: 26px;
+}
+
+#games {
+  font-size: 30px;
+  margin-right:10%;
+  margin-left: 10%;
+  border: 5px solid #ffdab9;
+  color:#ffdab9;
+  text-align: center;
+  padding:5%;
+}
+ 
+#choices {
+  text-align: center;
+  color: #ffdab9;
+  font-size: 30px;
+}
+
+#usedLetters {
+  text-align: center;
+  color: #ffdab9;
+  font-size: 26px;
+}
+
+#wins {
+  text-align: center;
+  color: #ffdab9;
+  font-size: 326px;
+};
+
+#losses {
+  text-align: center;
+  color: #ffdab9;
+  font-size: 26px;
+}

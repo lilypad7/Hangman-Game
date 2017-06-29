@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="hangman.css">
+</head>
+
+<body>
+
+ <div id="display"></div>
+  <div id="buttons"></div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+	
+<div class="wrapper">
+   <h1>Hangman</h1>
+    <h2>Press any key to get started! </h2>
+</div>
+<div class="wrapper">
+    <div id="buttons">
+    </div>
+</div>
+
+	<script>
+	function myFunction() {
+		alert("Ready to play?!");
+	}
+
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z', '_'];
+
+
+  var flowers;             
+  var selectedflower;     
+  var guesss;                
+  var wins ;              
+  var losses;           
+  var counter ;          
+  var space;           
+
+  var showwins = document.getElementById("wins");
+  var showlosses = document.getElementById("losses");
+
+  // create alphabet ul
+  var buttons = function () {
+    myButtons = document.getElementById('buttons');
+    letters = document.createElement('ul');
+
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.id = 'alphabet';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = alphabet[i];
+      check();
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
+    }
+  }
+
+function resetGame(){
+  guessesLeft = 10;
+  selectedflower = '';
+  startGame();
+  for (var i = 1; i < 18; i++) {
+    document.getElementById('Ltr' + i).innerHTML = '';
+  }
+}
+
+function startGame(){
+  var flowerList = ["gardenia","rose","orchid","tiger lily","stargazer","daffodil"];
+  var randomflower = Math.floor(Math.random() * flowerList.length); 
+  flowerSelection = (flowerList[randomMovie]); 
+  console.log("random flower selected"); 
+
+
+  if (selectedflower) = ("gardenia"); {
+    console.log("gardenia");
+    for(var i = 0; i < 17; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4','Ltr5','Ltr6','Ltr7','Ltr8']
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+
+  if(selectedflower === "rose") {
+    console.log("rose");
+    for(var i = 0; i < 10; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4']
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+
+  if(selectedflower === "orchid") {
+    console.log("orchid");
+    for(var i = 0; i < 9; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4','Ltr5','Ltr6']
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+
+
+  if(movieSelection === "tiger lily") {
+    console.log("tiger lily");
+    for(var i = 0; i < 5; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4','Ltr5', 'Ltr16', 'Ltr7', 'Ltr8', 'Ltr9,''Ltr10' ]
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+
+  if(selectedflower === "stargazer") {
+    console.log("star wars movie");
+    for(var i = 0; i < 8; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4','Ltr5','Ltr6','Ltr7','Ltr8']
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+
+  if(selectedflower === "daffodil") {
+    console.log("daffodil");
+    for(var i = 0; i < 6; i++){
+      var choiceLtrs = ['Ltr1','Ltr2','Ltr3','Ltr4','Ltr5','Ltr6', 'Ltr7', 'Ltr8']
+      var createSpan = document.createElement("span"); 
+      createSpan.innerHTML = "__ ";
+      gameDiv.appendChild(createSpan);
+      createSpan.setAttribute("id", pickLtrs[i]); 
+    }
+  }
+  document.getElementById("choices").innerHTML = "Choices: 10";
+}
+
+comments = function () {
+    showLives.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+
+document.onkeypress = function(event){
+  userGuess = event.key.toLowerCase();
+
+  if(selectedflower === "daffodil") {
+    var wrongAnswers = ['b','c','e','g','h','j','k','m','n','p','q','r','s','t','u','v','w','x','y','z'];
+  }
+
+
+    
+    
+
+	</script>
+</body>
+
+</html>
